@@ -22,9 +22,9 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'MadShop',
         theme: ThemeData(
+          fontFamily: 'Raleway',
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
-          fontFamily: 'Roboto',
         ),
         home: InitAppPage(),
         routes: {
