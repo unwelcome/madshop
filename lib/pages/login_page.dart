@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:madshop_ui_zharov/assets/styles/text.dart';
-import 'package:madshop_ui_zharov/pages/home_page.dart';
+import 'package:madshop_ui_zharov/pages/password_page.dart';
 import 'package:madshop_ui_zharov/pages/signup_page.dart';
 import 'package:madshop_ui_zharov/widgets/button.dart';
 import 'package:madshop_ui_zharov/widgets/input.dart';
@@ -15,7 +15,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   void _navigateTo(String path) {
-    final newPage = path == "/signup" ? SignUpPage() : HomePage();
+    final newPage = path == "/signup" ? SignUpPage() : PasswordPage();
 
     Navigator.pushReplacement(
       context,
@@ -99,7 +99,7 @@ class _LoginPageState extends State<LoginPage> {
                     SizedBox(height: 10),
                     CustomButton(
                       text: Text("Login", style: AppTextStyles.buttonLarge),
-                      onPressed: () => _navigateTo("/main"),
+                      onPressed: () => _navigateTo("/password"),
                       isFullWidth: true,
                     ),
                     Row(

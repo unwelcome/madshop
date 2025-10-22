@@ -15,7 +15,7 @@ class SignUpPage extends StatefulWidget {
 
 class _SignUpPageState extends State<SignUpPage> {
   void _navigateTo(String path) {
-    final newPage = path == "/signup" ? SignUpPage() : HomePage();
+    final newPage = path == "/login" ? LoginPage() : HomePage();
 
     Navigator.pushReplacement(
       context,

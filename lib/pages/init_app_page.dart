@@ -16,10 +16,10 @@ class _InitAppPageState extends State<InitAppPage> {
   @override
   void initState() {
     super.initState();
-    _navigateToHome();
+    _navigateToLogin();
   }
 
-  void _navigateToHome() {
+  void _navigateToLogin() {
     Future.delayed(Duration(milliseconds: 1500), () {
       Navigator.pushReplacement(
         context,
