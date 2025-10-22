@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:madshop_ui_zharov/assets/styles/text.dart';
+import 'package:madshop_ui_zharov/pages/home_page.dart';
 import 'package:madshop_ui_zharov/pages/login_page.dart';
 import 'package:madshop_ui_zharov/widgets/button.dart';
 import 'package:madshop_ui_zharov/widgets/input.dart';
@@ -13,9 +14,8 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
-    void _navigateTo(String path) {
-    // final newPage = path == "/signup" ? SignUpPage()
-    final newPage = LoginPage();
+  void _navigateTo(String path) {
+    final newPage = path == "/signup" ? SignUpPage() : HomePage();
 
     Navigator.pushReplacement(
       context,
@@ -34,6 +34,9 @@ class _SignUpPageState extends State<SignUpPage> {
 
   @override
   Widget build(BuildContext context) {
+    final keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
+    final isKeyboardOpen = keyboardHeight > 0;
+
     return Scaffold(
       body: SafeArea(
         top: false,
@@ -60,16 +63,16 @@ class _SignUpPageState extends State<SignUpPage> {
             Align(
               alignment: Alignment.bottomCenter, // Прижимаем к низу по центру
               child: Padding(
-                padding: EdgeInsets.only(bottom: 20, left: 40, right: 40), // Отступ снизу
+                padding: EdgeInsets.only(bottom: (isKeyboardOpen ? 5 : 20), left: 40, right: 40), // Отступ снизу
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
-                  spacing: 20,
+                  spacing: (isKeyboardOpen ? 10 : 20),
                   children: [
                     SizedBox(
                       width: double.infinity,
                       child: Text("Create\nAccount", style: AppTextStyles.titleUltraLarge), 
                     ),
-                    SizedBox(height: 130),
+                    SizedBox(height: (isKeyboardOpen ? 0 : 130)),
                     Column(
                       spacing: 12,
                       children: [
@@ -80,7 +83,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
                     CustomButton(
                       text: Text("Done", style: AppTextStyles.buttonLarge),
-                      onPressed: () {},
+                      onPressed: () => _navigateTo("/home"),
                       isFullWidth: true,
                     ),
                     Row(

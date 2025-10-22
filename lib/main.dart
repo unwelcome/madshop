@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:madshop_ui_zharov/pages/home_page.dart';
 import 'package:madshop_ui_zharov/pages/login_page.dart';
+import 'package:madshop_ui_zharov/pages/signup_page.dart';
 import 'package:provider/provider.dart';
 
 // pages
@@ -29,7 +31,8 @@ class MyApp extends StatelessWidget {
         home: InitAppPage(),
         routes: {
           '/login': (context) => LoginPage(),
-          // '/home': (context) => HomePage(),
+          '/signup': (context) => SignUpPage(),
+          '/home': (context) => HomePage(),
           // '/cart': (context) => CartPage(),
           // '/favorites': (context) => FavoritesPage(),
         },
