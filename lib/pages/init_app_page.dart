@@ -23,7 +23,16 @@ class _InitAppPageState extends State<InitAppPage> {
     Future.delayed(Duration(milliseconds: 1500), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => LoginPage()),
+        PageRouteBuilder(
+          pageBuilder: (context, animation, secondaryAnimation) => LoginPage(),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return FadeTransition(
+              opacity: animation,
+              child: child,
+            );
+          },
+          transitionDuration: Duration(milliseconds: 500),
+        ),
       );
     });
   }

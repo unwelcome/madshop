@@ -54,4 +54,13 @@ class AppTextStyles {
     fontWeight: FontWeight.w600,
     color: AppColor.textButton,
   );
+
+  // Ссылки
+  static const TextStyle link = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.normal,
+    color: AppColor.textMain,
+    height: 1.4,
+    decoration: TextDecoration.underline,
+  );
 }

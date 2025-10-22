@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter_svg: ^2.2.1
   provider: ^6.1.5+1
+  flutter_native_splash: ^2.4.7
 
 dev_dependencies:
   flutter_test:
@@ -64,6 +65,9 @@ flutter:
   assets:
     - lib/assets/icons/
     - lib/assets/images/
+    - lib/assets/images/login_clouds/
+    - lib/assets/images/password_clouds/
+    - lib/assets/images/signup_clouds/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
@@ -112,3 +116,12 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+
+
+flutter_native_splash:
+  color: "#ffffff"  # Фон вашего сплеш-скрина
+  image: lib/assets/images/splash_screen.png  # Ваша картинка
+  # branding: assets/images/branding.png  # Опционально: брендинг
+  # branding_mode: bottom  # Позиция брендинга
+  android: true
+  ios: true
