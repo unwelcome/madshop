@@ -18,6 +18,11 @@ class AppTextStyles {
     fontWeight: FontWeight.w400,
     color: AppColor.textMain,
   );
+  static const TextStyle titleTiny = TextStyle(
+    fontSize: 11,
+    fontWeight: FontWeight.w400,
+    color: AppColor.textMain,
+  );
 
   // Основной текст
   static const TextStyle body = TextStyle(
@@ -62,5 +67,12 @@ class AppTextStyles {
     color: AppColor.textMain,
     height: 1.4,
     decoration: TextDecoration.underline,
+  );
+
+  // Ценники
+    static const TextStyle price = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+    color: AppColor.textMain,
   );
 }
